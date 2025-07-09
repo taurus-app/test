@@ -1,0 +1,613 @@
+/* Loading Page Styles */
+
+/* Background */
+body {
+    background: #0C0E14 url('../assets/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(240, 185, 11, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(240, 185, 11, 0.05) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(12, 14, 20, 0.95) 0%, rgba(12, 14, 20, 0.92) 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Loading Container */
+.loading-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Logo Section */
+.logo-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.logo-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.loading-logo {
+    width: 6rem;
+    height: 6rem;
+    filter: drop-shadow(0 0 20px rgba(240, 185, 11, 0.6));
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+.logo-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8rem;
+    height: 8rem;
+    background: radial-gradient(circle, rgba(240, 185, 11, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+.loading-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #F0B90B;
+    margin: 0;
+    text-shadow: 0 0 20px rgba(240, 185, 11, 0.8);
+    animation: titleGlow 2s ease-in-out infinite alternate;
+    letter-spacing: 0.2rem;
+}
+
+.loading-subtitle {
+    font-size: 1.2rem;
+    color: #FAF6F6;
+    margin: 0.5rem 0 0 0;
+    opacity: 0.8;
+    letter-spacing: 0.1rem;
+}
+
+/* Loading Animation */
+.loading-animation {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    margin-bottom: 3rem;
+    animation: fadeIn 2s ease-out 0.5s both;
+}
+
+.loading-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    animation: ringRotate 3s linear infinite;
+}
+
+.ring-segment {
+    position: absolute;
+    width: 2px;
+    height: 4rem;
+    background: linear-gradient(to bottom, #F0B90B, transparent);
+    border-radius: 1px;
+    transform-origin: 50% 6rem;
+    opacity: 0.7;
+}
+
+.ring-segment-1 { transform: rotate(0deg); animation: segmentGlow 1.5s ease-in-out infinite; }
+.ring-segment-2 { transform: rotate(45deg); animation: segmentGlow 1.5s ease-in-out infinite 0.2s; }
+.ring-segment-3 { transform: rotate(90deg); animation: segmentGlow 1.5s ease-in-out infinite 0.4s; }
+.ring-segment-4 { transform: rotate(135deg); animation: segmentGlow 1.5s ease-in-out infinite 0.6s; }
+.ring-segment-5 { transform: rotate(180deg); animation: segmentGlow 1.5s ease-in-out infinite 0.8s; }
+.ring-segment-6 { transform: rotate(225deg); animation: segmentGlow 1.5s ease-in-out infinite 1s; }
+.ring-segment-7 { transform: rotate(270deg); animation: segmentGlow 1.5s ease-in-out infinite 1.2s; }
+.ring-segment-8 { transform: rotate(315deg); animation: segmentGlow 1.5s ease-in-out infinite 1.4s; }
+
+.loading-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4rem;
+    height: 4rem;
+}
+
+.center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    height: 1rem;
+    background: #F0B90B;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(240, 185, 11, 0.8);
+    animation: centerPulse 2s ease-in-out infinite;
+}
+
+.center-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid rgba(240, 185, 11, 0.3);
+    border-radius: 50%;
+    animation: centerPulseRing 2s ease-in-out infinite;
+}
+
+/* Loading Text */
+.loading-text-section {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeIn 2s ease-out 1s both;
+}
+
+.loading-text {
+    font-size: 1.3rem;
+    color: #FAF6F6;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+}
+
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.dot {
+    font-size: 1.5rem;
+    color: #F0B90B;
+    animation: dotBounce 1.4s ease-in-out infinite;
+}
+
+.dot-1 { animation-delay: 0s; }
+.dot-2 { animation-delay: 0.2s; }
+.dot-3 { animation-delay: 0.4s; }
+
+/* Progress Bar */
+.progress-section {
+    width: 80%;
+    max-width: 20rem;
+    text-align: center;
+    animation: fadeIn 2s ease-out 1.5s both;
+}
+
+.progress-bar {
+    position: relative;
+    width: 100%;
+    height: 0.5rem;
+    background: rgba(30,43,38,0.5);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(240, 185, 11, 0.3);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #F0B90B, #FFD700);
+    border-radius: 0.25rem;
+    width: 0%;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.progress-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: progressShine 2s ease-in-out infinite;
+}
+
+.progress-text {
+    font-size: 1rem;
+    color: #F0B90B;
+    font-weight: 600;
+}
+
+/* Decorative Elements */
+.decorative-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-orb {
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: #F0B90B;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatOrb 6s ease-in-out infinite;
+}
+
+.orb-1 {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    top: 70%;
+    right: 20%;
+    animation-delay: 2s;
+}
+
+.orb-3 {
+    bottom: 30%;
+    left: 25%;
+    animation-delay: 4s;
+}
+
+.energy-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.energy-line {
+    position: absolute;
+    background: linear-gradient(90deg, transparent, #F0B90B, transparent);
+    height: 1px;
+    opacity: 0.3;
+    animation: energyFlow 4s linear infinite;
+}
+
+.energy-line-1 {
+    top: 25%;
+    width: 60%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.energy-line-2 {
+    top: 60%;
+    width: 40%;
+    right: 10%;
+    animation-delay: 1.5s;
+}
+
+.energy-line-3 {
+    bottom: 40%;
+    width: 50%;
+    left: 10%;
+    animation-delay: 3s;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-0.5rem);
+    }
+}
+
+@keyframes logoGlow {
+    from {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 20px rgba(240, 185, 11, 0.8);
+    }
+    to {
+        text-shadow: 0 0 30px rgba(240, 185, 11, 1), 0 0 40px rgba(240, 185, 11, 0.6);
+    }
+}
+
+@keyframes ringRotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes segmentGlow {
+    0%, 100% {
+        opacity: 0.3;
+        box-shadow: 0 0 5px rgba(240, 185, 11, 0.3);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 15px rgba(240, 185, 11, 0.8);
+    }
+}
+
+@keyframes centerPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+@keyframes centerPulseRing {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes dotBounce {
+    0%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-0.5rem);
+    }
+}
+
+@keyframes progressShine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(400%);
+    }
+}
+
+@keyframes floatOrb {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-2rem) scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes energyFlow {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .loading-logo {
+        width: 4rem;
+        height: 4rem;
+    }
+    
+    .logo-glow {
+        width: 6rem;
+        height: 6rem;
+    }
+    
+    .loading-title {
+        font-size: 2.5rem;
+    }
+    
+    .loading-subtitle {
+        font-size: 1rem;
+    }
+    
+    .loading-animation {
+        width: 10rem;
+        height: 10rem;
+    }
+    
+    .ring-segment {
+        height: 3rem;
+        transform-origin: 50% 5rem;
+    }
+    
+    .loading-text {
+        font-size: 1.1rem;
+    }
+    
+    .progress-section {
+        width: 90%;
+    }
+}
+
+/* Hide decorative elements on mobile for performance */
+@media (max-width: 768px) {
+    .bg-decoration {
+        display: none;
+    }
+    
+    .decorative-elements {
+        display: none;
+    }
+}
+
+/* 金色流光环 */
+.loading-glow-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 13.5rem;
+  height: 13.5rem;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #F0B90B 0deg, #F0B90B 60deg, transparent 120deg, transparent 360deg);
+  filter: blur(8px) brightness(1.2);
+  opacity: 0.7;
+  animation: glowRingRotate 2.5s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+@keyframes glowRingRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 粒子环绕 */
+.particle-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11.5rem;
+  height: 11.5rem;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+}
+.particle {
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, #F0B90B 60%, #FAF6F6 100%, transparent 100%);
+  box-shadow: 0 0 8px 2px #F0B90B99;
+  opacity: 0.85;
+}
+.p1 { top: 0; left: 50%; transform: translate(-50%, 0); animation: orbit 2.2s linear infinite; }
+.p2 { top: 18%; left: 85%; transform: translate(-50%, -50%); animation: orbit 2.2s linear infinite 0.25s; }
+.p3 { top: 50%; left: 100%; transform: translate(-50%, -50%); animation: orbit 2.2s linear infinite 0.5s; }
+.p4 { top: 82%; left: 85%; transform: translate(-50%, -50%); animation: orbit 2.2s linear infinite 0.75s; }
+.p5 { top: 100%; left: 50%; transform: translate(-50%, -100%); animation: orbit 2.2s linear infinite 1s; }
+.p6 { top: 82%; left: 15%; transform: translate(-50%, -50%); animation: orbit 2.2s linear infinite 1.25s; }
+.p7 { top: 50%; left: 0%; transform: translate(-50%, -50%); animation: orbit 2.2s linear infinite 1.5s; }
+.p8 { top: 18%; left: 15%; transform: translate(-50%, -50%); animation: orbit 2.2s linear infinite 1.75s; }
+@keyframes orbit {
+  0% { filter: brightness(1.2) blur(0px); }
+  50% { filter: brightness(2.2) blur(2px); }
+  100% { filter: brightness(1.2) blur(0px); }
+}
+
+/* 进度条流光 */
+.progress-bar {
+  overflow: hidden;
+}
+.progress-shine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  animation: progressShineMove 2.2s linear infinite;
+  opacity: 0.18;
+  filter: blur(2px);
+}
+@keyframes progressShineMove {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+/* 中心多层发光 */
+.center-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+.center-glow.g1 {
+  width: 3.5rem; height: 3.5rem;
+  background: radial-gradient(circle, #F0B90B55 0%, transparent 80%);
+  filter: blur(2px);
+  opacity: 0.7;
+  animation: centerGlowPulse 2.2s infinite alternate;
+}
+.center-glow.g2 {
+  width: 5.5rem; height: 5.5rem;
+  background: radial-gradient(circle, #F0B90B33 0%, transparent 90%);
+  filter: blur(4px);
+  opacity: 0.5;
+  animation: centerGlowPulse 2.2s infinite alternate 0.5s;
+}
+@keyframes centerGlowPulse {
+  0% { opacity: 0.5; }
+  100% { opacity: 0.9; }
+}
+
+/* 进度数字发光跳动 */
+.progress-text {
+  animation: progressTextPulse 1.2s infinite alternate;
+  text-shadow: 0 0 8px #F0B90B, 0 0 2px #FAF6F6;
+}
+@keyframes progressTextPulse {
+  0% { color: #F0B90B; }
+  100% { color: #FAF6F6; }
+}

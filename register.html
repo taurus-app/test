@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Register</title>
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/register.css">
+	</head>
+
+	<body>
+		<!-- Background Decorative Elements -->
+		<div class="bg-decoration">
+			<div class="bg-circle bg-circle-1"></div>
+			<div class="bg-circle bg-circle-2"></div>
+			<div class="bg-circle bg-circle-3"></div>
+			<div class="bg-lines">
+				<div class="bg-line bg-line-1"></div>
+				<div class="bg-line bg-line-2"></div>
+				<div class="bg-line bg-line-3"></div>
+			</div>
+		</div>
+
+		<div class="register-container">
+			<div class="logo-title-bar">
+				<div class="fixed-logo">
+					<img src="assets/images/taurus_logo.png" alt="Taurus Logo">
+				</div>
+				<h1 class="register-title" data-i18n="register.title">Register</h1>
+				<div class="lang-switch-global">
+					<div class="lang-dropdown">
+						<div class="lang-dropdown-toggle" id="langDropdownBtn"></div>
+						<div class="lang-dropdown-menu" id="langDropdownMenu">
+							<button class="lang-btn" data-lang="zh">简体中文</button>
+							<button class="lang-btn" data-lang="en">English</button>
+							<button class="lang-btn" data-lang="ko">한국어</button>
+							<button class="lang-btn" data-lang="zh_tw">繁體中文</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="brand-block">
+				<div class="card-decoration card-decoration-top"></div>
+				<img src="assets/images/taurus_logo.png" alt="Taurus Logo" class="brand-logo">
+				<div class="brand-name">Taurus</div>
+				<div class="card-decoration card-decoration-bottom"></div>
+			</div>
+			<form class="register-form" autocomplete="off">
+				<label class="form-label" for="walletAddress" data-i18n="walletAddress">Wallet Address</label>
+				<input type="text" id="walletAddress" class="form-input" readonly placeholder="Connect your wallet">
+
+				<label class="form-label" for="inviterId" data-i18n="register.inviteId">Inviter ID</label>
+				<input type="text" id="inviterId" class="form-input" readonly placeholder="Enter inviter ID" maxlength="32" autocomplete="off">
+
+				<div class="tips-block">
+					<div class="card-decoration card-decoration-top"></div>
+					<div class="tips-title" data-i18n="tips">Tips</div>
+					<div class="tips-desc" data-i18n="registerPayTip">Register and pay 0.1 BNB to upgrade to V1 member</div>
+					<div class="tips-balance" id="bnbBalance"></div>
+					<div class="card-decoration card-decoration-bottom"></div>
+				</div>
+				<button type="submit" class="register-btn" id="registerBtn" data-i18n="register.register">Register</button>
+			</form>
+		</div>
+		<script src="assets/plugins/bootstrap.bundle.min.js"></script>
+		<script src="assets/plugins/web3.min.js"></script>
+		<script src="assets/abi/abiAddress.js"></script>
+		<script src="js/auth.js"></script>
+		<script src="js/register.js"></script>
+		<script src="js/i18n.js"></script>
+	</body>
+
+</html>

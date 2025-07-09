@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>My Partners - Taurus</title>
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/dashboard.css">
+		<link rel="stylesheet" href="css/partners.css">
+	</head>
+
+	<body class="disable-scroll">
+		<!-- Background Decorative Elements -->
+		<div class="bg-decoration">
+			<div class="bg-circle bg-circle-1"></div>
+			<div class="bg-circle bg-circle-2"></div>
+			<div class="bg-circle bg-circle-3"></div>
+			<div class="bg-lines">
+				<div class="bg-line bg-line-1"></div>
+				<div class="bg-line bg-line-2"></div>
+				<div class="bg-line bg-line-3"></div>
+			</div>
+		</div>
+
+		<div class="dashboard-container">
+			<div class="logo-title-bar">
+				<div class="fixed-logo">
+					<img src="assets/images/taurus_logo.png" alt="Taurus Logo">
+				</div>
+				<h1 class="dashboard-title" data-i18n="partners.title">My Partners</h1>
+				<div class="lang-switch-global">
+					<div class="lang-dropdown">
+						<div class="lang-dropdown-toggle" id="langDropdownBtn"></div>
+						<div class="lang-dropdown-menu" id="langDropdownMenu">
+							<button class="lang-btn" data-lang="zh">简体中文</button>
+							<button class="lang-btn" data-lang="en">English</button>
+							<button class="lang-btn" data-lang="ko">한국어</button>
+							<button class="lang-btn" data-lang="zh_tw">繁體中文</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="dashboard-main-content invisible">
+				<div class="partner-count-row">
+					<div class="card-decoration card-decoration-top"></div>
+					<span id="partnerCount" data-i18n="partners.myPartners">My Partners --</span>
+					<button class="back-btn" id="backBtn" data-i18n="slotHistory.back">Back</button>
+					<div class="card-decoration card-decoration-bottom"></div>
+				</div>
+				<div class="new-partners-title" data-i18n="newPartners">New Partners</div>
+				<div id="partnerList"></div>
+			</div>
+			<div class="skeleton-content">
+				<div class="skeleton-card">
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+				</div>
+				<div class="skeleton-card">
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+				</div>
+				<div class="skeleton-card">
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+				</div>
+				<div class="skeleton-card">
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+				</div>
+			</div>
+		</div>
+		<script src="assets/plugins/bootstrap.bundle.min.js"></script>
+		<script src="assets/plugins/web3.min.js"></script>
+		<script src="assets/abi/abiAddress.js"></script>
+		<script src="js/auth.js"></script>
+		<script src="js/partners.js"></script>
+		<script src="js/i18n.js"></script>
+	</body>
+
+</html>

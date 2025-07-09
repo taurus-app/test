@@ -1,0 +1,504 @@
+/* Taurus Register - Premium Black Gold Theme */
+
+/* Global Styles */
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #0C0E14 url('../assets/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #FAF6F6;
+    overflow-x: hidden;
+    user-select: none;
+    position: relative;
+}
+
+/* Premium Background Overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(240, 185, 11, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(240, 185, 11, 0.05) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(12, 14, 20, 0.95) 0%, rgba(12, 14, 20, 0.92) 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 0.3rem;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(30, 43, 38, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #F0B90B 0%, #BE9102 100%);
+    border-radius: 0.15rem;
+}
+
+/* Main Container */
+.register-container {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo and Title Bar */
+.logo-title-bar {
+    position: relative;
+    width: 100%;
+    height: 4.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fixed-logo {
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, rgba(30, 43, 38, 0.95) 0%, rgba(30, 43, 38, 0.85) 100%);
+    border: 2px solid rgba(240, 185, 11, 0.3);
+    border-radius: 1.2rem;
+    box-shadow: 
+        0 0.5rem 1.5rem rgba(240, 185, 11, 0.15),
+        inset 0 0.1rem 0.3rem rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.fixed-logo:hover {
+    border-color: rgba(240, 185, 11, 0.6);
+    box-shadow: 
+        0 0.8rem 2rem rgba(240, 185, 11, 0.25),
+        inset 0 0.1rem 0.3rem rgba(255, 255, 255, 0.15);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.fixed-logo img {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid rgba(240, 185, 11, 0.2);
+    transition: all 0.3s ease;
+}
+
+.fixed-logo:hover img {
+    border-color: rgba(240, 185, 11, 0.5);
+    transform: scale(1.1);
+}
+
+.register-title {
+    text-align: center;
+    width: 100%;
+    line-height: 4.5rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #F0B90B;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    text-shadow: 
+        0 0.2rem 0.4rem rgba(0, 0, 0, 0.5),
+        0 0 2rem rgba(240, 185, 11, 0.3);
+    background: linear-gradient(135deg, #F0B90B 0%, #FAF6F6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Brand Block */
+.brand-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.8rem;
+    animation: fadeInUp 0.8s;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(30, 43, 38, 0.95) 0%, rgba(30, 43, 38, 0.85) 100%);
+    border: 2px solid rgba(240, 185, 11, 0.2);
+    border-radius: 1.5rem;
+    box-shadow: 
+        0 0.8rem 2rem rgba(240, 185, 11, 0.12),
+        inset 0 0.1rem 0.3rem rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    transition: all 0.3s ease;
+}
+
+.brand-block:hover {
+    border-color: rgba(240, 185, 11, 0.4);
+    box-shadow: 
+        0 1rem 2.5rem rgba(240, 185, 11, 0.2),
+        inset 0 0.1rem 0.3rem rgba(255, 255, 255, 0.1);
+    transform: translateY(-0.2rem);
+}
+
+.brand-logo {
+    width: 16vw;
+    max-width: 70px;
+    min-width: 48px;
+    height: auto;
+    margin-right: 1.1rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(30, 43, 38, 0.95) 0%, rgba(30, 43, 38, 0.85) 100%);
+    box-shadow: 
+        0 0.5rem 1.5rem rgba(240, 185, 11, 0.15),
+        inset 0 0.1rem 0.3rem rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(240, 185, 11, 0.3);
+    transition: all 0.3s ease;
+}
+
+.brand-block:hover .brand-logo {
+    border-color: rgba(240, 185, 11, 0.6);
+    transform: scale(1.05);
+}
+
+.brand-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #F0B90B;
+    letter-spacing: 0.04em;
+    text-shadow: 
+        0 0.2rem 0.4rem rgba(0, 0, 0, 0.5),
+        0 0 2rem rgba(240, 185, 11, 0.3);
+    background: linear-gradient(135deg, #F0B90B 0%, #FAF6F6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Register Form */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    animation: fadeInUp 1s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-label {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #FAF6F6;
+    letter-spacing: 0.02em;
+    text-shadow: 0 0.2rem 0.4rem rgba(240, 185, 11, 0.2);
+    position: relative;
+}
+
+.form-label::after {
+    content: '';
+    position: absolute;
+    bottom: -0.2rem;
+    left: 0;
+    width: 2rem;
+    height: 0.1rem;
+    background: linear-gradient(90deg, #F0B90B 0%, transparent 100%);
+    border-radius: 0.05rem;
+}
+
+.form-input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.15rem;
+    padding: 1rem 1.2rem;
+    border-radius: 1rem;
+    border: 2px solid rgba(240, 185, 11, 0.2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.05) 100%);
+    color: #FAF6F6;
+    margin-bottom: 0.5rem;
+    outline: none;
+    box-shadow: 
+        0 0.3rem 0.8rem rgba(30, 43, 38, 0.2),
+        inset 0 0.1rem 0.2rem rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    user-select: auto;
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.form-input:focus {
+    border-color: rgba(240, 185, 11, 0.6);
+    box-shadow: 
+        0 0.5rem 1.2rem rgba(240, 185, 11, 0.2),
+        inset 0 0.1rem 0.2rem rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%);
+    transform: translateY(-0.1rem);
+}
+
+.form-input::placeholder {
+    color: rgba(250, 246, 246, 0.5);
+    font-style: italic;
+}
+
+/* Tips Block */
+.tips-block {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(30, 43, 38, 0.95) 0%, rgba(30, 43, 38, 0.85) 100%);
+    border: 2px solid rgba(240, 185, 11, 0.2);
+    border-radius: 1.2rem;
+    box-shadow: 
+        0 0.8rem 2rem rgba(240, 185, 11, 0.12),
+        inset 0 0.1rem 0.3rem rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tips-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.1rem;
+    background: linear-gradient(90deg, transparent 0%, rgba(240, 185, 11, 0.6) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tips-block:hover {
+    border-color: rgba(240, 185, 11, 0.4);
+    box-shadow: 
+        0 1rem 2.5rem rgba(240, 185, 11, 0.2),
+        inset 0 0.1rem 0.3rem rgba(255, 255, 255, 0.1);
+    transform: translateY(-0.2rem);
+}
+
+.tips-block:hover::before {
+    opacity: 1;
+}
+
+.tips-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #FAF6F6;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0.2rem 0.4rem rgba(240, 185, 11, 0.3);
+    letter-spacing: 0.02em;
+}
+
+.tips-desc {
+    color: #F0B90B;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    text-shadow: 0 0.1rem 0.2rem rgba(240, 185, 11, 0.3);
+}
+
+.tips-balance {
+    color: #F0B90B;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-shadow: 0 0.1rem 0.2rem rgba(240, 185, 11, 0.3);
+}
+
+.tips-balance span {
+    background: linear-gradient(135deg, rgba(240, 185, 11, 0.2) 0%, rgba(240, 185, 11, 0.1) 100%);
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(240, 185, 11, 0.3);
+    margin-left: 0.3rem;
+}
+
+/* Register Button */
+.register-btn {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0.8rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #F0B90B;
+    background: linear-gradient(135deg, rgba(240, 185, 11, 0.1) 0%, rgba(240, 185, 11, 0.05) 100%);
+    border: 3px solid #F0B90B;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0.8rem 2rem rgba(240, 185, 11, 0.15),
+        inset 0 0.1rem 0.3rem rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.02em;
+    text-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.register-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(240, 185, 11, 0.2) 50%, transparent 100%);
+    transition: left 0.5s ease;
+}
+
+.register-btn:hover {
+    background: linear-gradient(135deg, #F0B90B 0%, #BE9102 100%);
+    color: #0C0E14;
+    transform: translateY(-0.2rem);
+    box-shadow: 
+        0 1rem 2.5rem rgba(240, 185, 11, 0.4),
+        inset 0 0.1rem 0.3rem rgba(255, 255, 255, 0.2);
+    border-color: #F0B90B;
+}
+
+.register-btn:hover::before {
+    left: 100%;
+}
+
+.register-btn:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 0.5rem 1.5rem rgba(240, 185, 11, 0.3),
+        inset 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .register-container {
+        max-width: 100vw;
+        padding: 1.5rem 1rem 1.5rem 1rem;
+    }
+    
+    .brand-logo {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .brand-name {
+        font-size: 2rem;
+    }
+    
+    .logo-title-bar {
+        height: 3.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .fixed-logo {
+        left: 0.3rem;
+        padding: 0.4rem;
+    }
+    
+    .fixed-logo img {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+    
+    .register-title {
+        line-height: 3.5rem;
+        font-size: 1.8rem;
+    }
+    
+    .form-label {
+        font-size: 1.1rem;
+    }
+    
+    .form-input {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    .register-btn {
+        font-size: 1.3rem;
+        padding: 0.8rem 0;
+    }
+    
+    .tips-block {
+        padding: 1.2rem;
+    }
+    
+    .tips-title {
+        font-size: 1.2rem;
+    }
+    
+    .tips-desc, .tips-balance {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .register-container {
+        max-width: 90vw;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(2rem); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.loading {
+    background: linear-gradient(90deg, 
+        rgba(240, 185, 11, 0.1) 25%, 
+        rgba(240, 185, 11, 0.2) 50%, 
+        rgba(240, 185, 11, 0.1) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Button States */
+.register-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(250, 246, 246, 0.5);
+}
+
+/* Form Validation Styles */
+.form-input.error {
+    border-color: rgba(255, 100, 100, 0.6);
+    box-shadow: 
+        0 0.5rem 1.2rem rgba(255, 100, 100, 0.2),
+        inset 0 0.1rem 0.2rem rgba(255, 255, 255, 0.1);
+}
+
+.form-input.success {
+    border-color: rgba(100, 255, 100, 0.6);
+    box-shadow: 
+        0 0.5rem 1.2rem rgba(100, 255, 100, 0.2),
+        inset 0 0.1rem 0.2rem rgba(255, 255, 255, 0.1);
+} 

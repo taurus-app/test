@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Taurus Dashboard</title>
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/dashboard.css">
+	</head>
+
+	<body class="disable-scroll">
+		<!-- Background Decorative Elements -->
+		<div class="bg-decoration">
+			<div class="bg-circle bg-circle-1"></div>
+			<div class="bg-circle bg-circle-2"></div>
+			<div class="bg-circle bg-circle-3"></div>
+			<div class="bg-lines">
+				<div class="bg-line bg-line-1"></div>
+				<div class="bg-line bg-line-2"></div>
+				<div class="bg-line bg-line-3"></div>
+			</div>
+		</div>
+
+		<div class="dashboard-container">
+			<div class="logo-title-bar">
+				<div class="fixed-logo">
+					<img src="assets/images/taurus_logo.png" alt="Taurus Logo">
+				</div>
+				<h1 class="dashboard-title" data-i18n="dashboard.title">Dashboard</h1>
+				<div class="lang-switch-global">
+					<div class="lang-dropdown">
+						<div class="lang-dropdown-toggle" id="langDropdownBtn"></div>
+						<div class="lang-dropdown-menu" id="langDropdownMenu">
+							<button class="lang-btn" data-lang="zh">简体中文</button>
+							<button class="lang-btn" data-lang="en">English</button>
+							<button class="lang-btn" data-lang="ko">한국어</button>
+							<button class="lang-btn" data-lang="zh_tw">繁體中文</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="dashboard-main-content invisible">
+				<div class="user-info-card card-blur">
+					<div class="card-decoration card-decoration-top"></div>
+					<div class="user-id">
+						<span>ID: <span id="userId">--</span></span>
+						<span class="vip-level" id="vipLevel">T--</span>
+						<span class="inviter-id" id="inviterId"></span>
+					</div>
+					<div class="wallet-row">
+						<input type="text" id="walletAddress" class="wallet-input" readonly>
+					</div>
+					<div class="partner-row">
+						<span id="partnerCount">My Partners: --</span>
+						<button class="details-btn" id="detailsBtn" data-i18n="dashboard.details">Details</button>
+					</div>
+					<div class="card-decoration card-decoration-bottom"></div>
+				</div>
+				<div class="token-balance-card card-blur">
+					<div class="card-decoration card-decoration-top"></div>
+					<div class="token-balance-title" data-i18n="dashboard.tokenBalance">Taurus Balance</div>
+					<div class="token-balance-row">
+						<div class="token-info">
+							<img src="assets/images/taurus_logo.png" alt="Taurus Token" class="token-icon">
+							<span class="token-amount" id="tokenBalance">0.00</span>
+							<span class="token-symbol">TAURUS</span>
+						</div>
+						<button class="stake-btn" id="stakeBtn" data-i18n="dashboard.stake">Stake</button>
+					</div>
+					<div class="card-decoration card-decoration-bottom"></div>
+				</div>
+				<div class="invite-link-card card-blur">
+					<div class="card-decoration card-decoration-top"></div>
+					<div class="invite-title" data-i18n="dashboard.inviteLink">My Invitation Link</div>
+					<div class="invite-link-row">
+						<span id="inviteLink"></span>
+						<button class="copy-btn" id="copyInviteBtn"></button>
+					</div>
+					<div class="card-decoration card-decoration-bottom"></div>
+				</div>
+				<div class="slot-section card-blur">
+					<div class="card-decoration card-decoration-top"></div>
+					<div id="slotList"></div>
+					<div class="card-decoration card-decoration-bottom"></div>
+				</div>
+				<div class="legend-section">
+					<div class="legend-row">
+						<span class="legend-dot direct"></span>
+						<span class="tip-direct" data-i18n="directPartnerTip">Direct partner - Direct partner occupying a slot in your level</span>
+					</div>
+					<div class="legend-row">
+						<span class="legend-dot indirect"></span>
+						<span data-i18n="overflowTip">Overflow from below - Your downline's partner occupying a slot in your level</span>
+					</div>
+					<div class="legend-row">
+						<span class="legend-dot empty"></span>
+						<span data-i18n="noBonusTip">No bonus generated</span>
+					</div>
+				</div>
+			</div>
+			<div class="skeleton-content">
+				<div class="skeleton-card">
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+				</div>
+				<div class="skeleton-card">
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+				</div>
+				<div class="skeleton-card">
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+				</div>
+				<div class="skeleton-card">
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+				</div>
+			</div>
+		</div>
+		<script src="assets/plugins/bootstrap.bundle.min.js"></script>
+		<script src="assets/plugins/web3.min.js"></script>
+		<script src="assets/abi/abiAddress.js"></script>
+		<script src="js/auth.js"></script>
+		<script src="js/baseData.js"></script>
+		<script src="js/dashboard.js"></script>
+		<script src="js/i18n.js"></script>
+	</body>
+
+</html>

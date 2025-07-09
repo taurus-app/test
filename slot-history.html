@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Slot History - Taurus</title>
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/dashboard.css">
+		<link rel="stylesheet" href="css/slot-history.css">
+	</head>
+
+	<body>
+		<!-- Background Decorative Elements -->
+		<div class="bg-decoration">
+			<div class="bg-circle bg-circle-1"></div>
+			<div class="bg-circle bg-circle-2"></div>
+			<div class="bg-circle bg-circle-3"></div>
+			<div class="bg-lines">
+				<div class="bg-line bg-line-1"></div>
+				<div class="bg-line bg-line-2"></div>
+				<div class="bg-line bg-line-3"></div>
+			</div>
+		</div>
+
+		<div class="dashboard-container">
+			<div class="logo-title-bar">
+				<div class="fixed-logo">
+					<img src="assets/images/taurus_logo.png" alt="Taurus Logo">
+				</div>
+				<h1 class="dashboard-title" data-i18n="slotHistory.title">Slot History</h1>
+				<div class="lang-switch-global">
+					<div class="lang-dropdown">
+						<div class="lang-dropdown-toggle" id="langDropdownBtn"></div>
+						<div class="lang-dropdown-menu" id="langDropdownMenu">
+							<button class="lang-btn" data-lang="zh">简体中文</button>
+							<button class="lang-btn" data-lang="en">English</button>
+							<button class="lang-btn" data-lang="ko">한국어</button>
+							<button class="lang-btn" data-lang="zh_tw">繁體中文</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="dashboard-main-content invisible">
+				<div class="slot-history-header-row">
+					<div class="card-decoration card-decoration-top"></div>
+					<div class="slot-history-header">
+						<span class="slot-history-title" data-i18n="slotHistory.recentRewards">Recent Rewards</span>
+					</div>
+					<button class="back-btn" id="backBtn" data-i18n="slotHistory.back">Back</button>
+					<div class="card-decoration card-decoration-bottom"></div>
+				</div>
+				<div class="slot-history-table-card">
+					<div class="card-decoration card-decoration-top"></div>
+					<div id="slotHistoryTable">
+					</div>
+					<div class="card-decoration card-decoration-bottom"></div>
+				</div>
+			</div>
+
+			<div class="skeleton-content">
+				<div class="skeleton-card">
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+				</div>
+				<div class="skeleton-card">
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+				</div>
+				<div class="skeleton-card">
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+				</div>
+				<div class="skeleton-card">
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+					<div class="skeleton-line"></div>
+				</div>
+			</div>
+		</div>
+		<script src="assets/plugins/bootstrap.bundle.min.js"></script>
+		<script src="assets/plugins/web3.min.js"></script>
+		<script src="assets/abi/abiAddress.js"></script>
+		<script src="js/auth.js"></script>
+		<script src="js/baseData.js"></script>
+		<script src="js/slot-history.js"></script>
+		<script src="js/i18n.js"></script>
+	</body>
+
+</html>

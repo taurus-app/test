@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stake - Taurus</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+	<link rel="stylesheet" href="css/stake.css">
+</head>
+
+<body class="disable-scroll">
+    <!-- Background Decorative Elements -->
+    <div class="bg-decoration">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        <div class="bg-circle bg-circle-3"></div>
+        <div class="bg-lines">
+            <div class="bg-line bg-line-1"></div>
+            <div class="bg-line bg-line-2"></div>
+            <div class="bg-line bg-line-3"></div>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <div class="logo-title-bar">
+            <div class="fixed-logo">
+                <img src="assets/images/taurus_logo.png" alt="Taurus Logo">
+            </div>
+            <h1 class="dashboard-title" data-i18n="stake.title">Stake</h1>
+            <div class="lang-switch-global">
+                <div class="lang-dropdown">
+                    <div class="lang-dropdown-toggle" id="langDropdownBtn"></div>
+                    <div class="lang-dropdown-menu" id="langDropdownMenu">
+                        <button class="lang-btn" data-lang="zh">简体中文</button>
+                        <button class="lang-btn" data-lang="en">English</button>
+                        <button class="lang-btn" data-lang="ko">한국어</button>
+                        <button class="lang-btn" data-lang="zh_tw">繁體中文</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-main-content invisible">
+            <!-- Token Balance Card -->
+            <div class="token-balance-card card-blur">
+                <div class="card-decoration card-decoration-top"></div>
+                <div class="token-balance-title-row" style="display: flex; align-items: center; justify-content: space-between;">
+                    <div class="token-balance-title" data-i18n="stake.tokenBalance">Token Balance</div>
+                    <button class="back-btn" id="backBtn" data-i18n="stake.back">Back</button>
+                </div>
+                <div class="token-balance-row">
+                    <div class="token-info">
+                        <img src="assets/images/taurus_logo.png" alt="Taurus Token" class="token-icon">
+                        <span class="token-amount" id="tokenBalance">0.00</span>
+                        <span class="token-symbol">TAURUS</span>
+                    </div>
+                </div>
+                <div class="total-interest-row">
+                    <span class="total-interest-label" data-i18n="stake.totalInterestClaimed">Total Interest Claimed</span>
+                    <span class="total-interest-value" id="totalInterestClaimed">0.00 TAURUS</span>
+                </div>
+                <div class="card-decoration card-decoration-bottom"></div>
+            </div>
+
+            <!-- Staking Overview Card -->
+            <div class="stake-overview-card card-blur">
+                <div class="card-decoration card-decoration-top"></div>
+                <div class="stake-overview-title" data-i18n="stake.stakingOverview">Staking Overview</div>
+                <div class="stake-stats">
+                    <div class="stake-stat-item">
+                        <span class="stat-label" data-i18n="stake.stakedAmount">Staked Amount</span>
+                        <span class="stat-value" id="stakedAmount">0.00 TAURUS</span>
+                    </div>
+                    <div class="stake-stat-item">
+                        <span class="stat-label" data-i18n="stake.pendingInterest">Pending Interest</span>
+                        <span class="stat-value" id="pendingInterest">0.00 TAURUS</span>
+                    </div>
+                    <div class="stake-stat-item">
+                        <span class="stat-label" data-i18n="stake.apr">APR</span>
+                        <span class="stat-value" id="apr">--%</span>
+                    </div>
+                    <div class="stake-stat-item">
+                        <span class="stat-label" data-i18n="stake.maxStakeLimit">Max Stake Limit</span>
+                        <span class="stat-value" id="maxStakeLimit">0.00 TAURUS</span>
+                    </div>
+                </div>
+                <div class="card-decoration card-decoration-bottom"></div>
+                <div class="stake-fee-tip" data-i18n="stake.feeTip">7% interest will be deducted when withdrawing.</div>
+            </div>
+
+            <!-- Staking Actions Card -->
+            <div class="stake-actions-card card-blur">
+                <div class="card-decoration card-decoration-top"></div>
+                <div class="stake-actions-title" data-i18n="stake.stakingActions">Staking Actions</div>
+                
+                <!-- Stake Form -->
+                <div class="stake-form">
+                    <div class="form-group">
+                        <label class="form-label" for="stakeAmount" data-i18n="stake.stakeAmount">Stake Amount</label>
+                        <div class="input-group">
+                            <input type="number" id="stakeAmount" class="form-input" placeholder="0.00" step="0.01" min="0">
+                            <!-- <button class="max-btn" id="maxStakeBtn" data-i18n="stake.max">MAX</button> -->
+                        </div>
+                    </div>
+                    <button class="stake-action-btn primary" id="stakeBtn" data-i18n="stake.stake">Stake</button>
+                </div>
+
+                <!-- Withdraw Actions -->
+                <div class="withdraw-actions">
+                    <button class="stake-action-btn secondary" id="withdrawPrincipalBtn" data-i18n="stake.withdrawPrincipal">Withdraw Principal</button>
+                    <button class="stake-action-btn secondary" id="claimInterestBtn" data-i18n="stake.claimInterest">Claim Interest</button>
+                </div>
+                
+                <div class="card-decoration card-decoration-bottom"></div>
+            </div>
+
+            <!-- Back Button -->
+        </div>
+        <div class="skeleton-content">
+            <div class="skeleton-card">
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line"></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/plugins/bootstrap.bundle.min.js"></script>
+    <script src="assets/plugins/web3.min.js"></script>
+    <script src="assets/abi/abiAddress.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/stake.js"></script>
+
+</body>
+
+</html> 
