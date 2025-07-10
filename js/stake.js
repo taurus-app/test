@@ -100,7 +100,7 @@ async function loadStakeData() {
     stakeData.apr = FIXED_APR;
     // Total interest claimed (before tax, need to calculate after-tax value)
     const totalInterestClaimedBeforeTax = fromWei(stakeInfo.totalInterestClaimed);
-    stakeData.totalInterestClaimed = (parseFloat(totalInterestClaimedBeforeTax) * 0.93).toString();
+    stakeData.totalInterestClaimed = (parseFloat(totalInterestClaimedBeforeTax) * 0.95).toString();
     setStakeInputDefault();
     updateStakeUI();
 }
@@ -132,7 +132,7 @@ function updateStakeUI() {
     document.getElementById('stakedAmount').textContent = parseFloat(stakeData.stakedAmount).toFixed(4) + ' TAURUS';
     document.getElementById('pendingInterest').textContent = parseFloat(stakeData.pendingInterest).toFixed(4) + ' TAURUS';
     document.getElementById('apr').textContent = FIXED_APR + '%';
-    document.getElementById('maxStakeLimit').textContent = `${MIN_STAKE} ~ ${parseFloat(stakeData.maxStakeLimit).toFixed(0)} TAURUS`;
+    document.getElementById('maxStakeLimit').textContent = `${parseFloat(stakeData.maxStakeLimit).toFixed(0)} TAURUS`;
 }
 
 // =============================
@@ -179,11 +179,18 @@ function setupEventListeners() {
         await handleStake();
     };
     document.getElementById('withdrawPrincipalBtn').onclick = async function () {
+        // Add money rain effect
+        const btn = document.getElementById('withdrawPrincipalBtn');
+        btn.style.animation = 'moneyRain 0.3s ease-out';
+        setTimeout(() => {
+            btn.style.animation = '';
+        }, 300);
+        
         await handleWithdrawPrincipal();
     };
-    document.getElementById('claimInterestBtn').onclick = async function () {
-        await handleClaimInterest();
-    };
+    // document.getElementById('claimInterestBtn').onclick = async function () {
+    //     await handleClaimInterest();
+    // };
 }
 
 // =============================
@@ -262,30 +269,30 @@ async function handleWithdrawPrincipal() {
     }
 }
 
-async function handleClaimInterest() {
-    try {
-        if (!address) {
-            window.showToast && window.showToast(window.t('stake.connectWallet'), 'error');
-            return;
-        }
-        if (parseFloat(stakeData.pendingInterest) <= 0) {
-            window.showToast && window.showToast(window.t('stake.noInterestToClaim'), 'error');
-            return;
-        }
-        window.showToast && window.showToast(window.t('stake.claimingInterest'), 'info');
-        await stakeContract.methods.claimInterest().send({ from: address });
-        window.showToast && window.showToast(window.t('stake.interestClaimedSuccessfully'), 'success');
-        await loadStakeData();
-    } catch (error) {
-        console.error('Claim error:', error);
-        if (error.code === 4001) {
-            window.showToast && window.showToast(window.t('stake.transactionRejected'), 'error');
-        } else {
-            const errorMsg = window.t('stake.claimFailed').replace('{error}', error.message || window.t('stake.unknownError'));
-            window.showToast && window.showToast(errorMsg, 'error');
-        }
-    }
-}
+// async function handleClaimInterest() {
+//     try {
+//         if (!address) {
+//             window.showToast && window.showToast(window.t('stake.connectWallet'), 'error');
+//             return;
+//         }
+//         if (parseFloat(stakeData.pendingInterest) <= 0) {
+//             window.showToast && window.showToast(window.t('stake.noInterestToClaim'), 'error');
+//             return;
+//         }
+//         window.showToast && window.showToast(window.t('stake.claimingInterest'), 'info');
+//         await stakeContract.methods.claimInterest().send({ from: address });
+//         window.showToast && window.showToast(window.t('stake.interestClaimedSuccessfully'), 'success');
+//         await loadStakeData();
+//     } catch (error) {
+//         console.error('Claim error:', error);
+//         if (error.code === 4001) {
+//             window.showToast && window.showToast(window.t('stake.transactionRejected'), 'error');
+//         } else {
+//             const errorMsg = window.t('stake.claimFailed').replace('{error}', error.message || window.t('stake.unknownError'));
+//             window.showToast && window.showToast(errorMsg, 'error');
+//         }
+//     }
+// }
 
 // =============================
 // Page Entry Point

@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div class="card-decoration card-decoration-bottom"></div>
-                <div class="stake-fee-tip" data-i18n="stake.feeTip">7% interest will be deducted when withdrawing.</div>
+                <div class="stake-fee-tip" data-i18n="stake.feeTip">5% interest will be deducted when withdrawing.</div>
             </div>
 
             <!-- Staking Actions Card -->
@@ -104,14 +104,26 @@
                             <!-- <button class="max-btn" id="maxStakeBtn" data-i18n="stake.max">MAX</button> -->
                         </div>
                     </div>
-                    <button class="stake-action-btn primary" id="stakeBtn" data-i18n="stake.stake">Stake</button>
-                </div>
+                                    <button class="stake-action-btn primary" id="stakeBtn" data-i18n="stake.stake">Stake</button>
+            </div>
 
-                <!-- Withdraw Actions -->
-                <div class="withdraw-actions">
-                    <button class="stake-action-btn secondary" id="withdrawPrincipalBtn" data-i18n="stake.withdrawPrincipal">Withdraw Principal</button>
-                    <button class="stake-action-btn secondary" id="claimInterestBtn" data-i18n="stake.claimInterest">Claim Interest</button>
-                </div>
+            <!-- Action Separator -->
+            <div class="action-separator">
+                <div class="separator-line"></div>
+                <span class="separator-text" data-i18n="stake.withdrawSection">Withdraw</span>
+                <div class="separator-line"></div>
+            </div>
+
+            <!-- Withdraw Actions -->
+            <div class="withdraw-actions">
+                <button class="stake-action-btn primary withdraw-btn" id="withdrawPrincipalBtn" data-i18n="stake.withdrawPrincipal">
+                    <span class="btn-content">
+                        <span class="btn-text">Withdraw Principal</span>
+                        <span class="btn-icon">💰</span>
+                    </span>
+                </button>
+                <!-- <button class="stake-action-btn secondary" id="claimInterestBtn" data-i18n="stake.claimInterest">Claim Interest</button> -->
+            </div>
                 
                 <div class="card-decoration card-decoration-bottom"></div>
             </div>
